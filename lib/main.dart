@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'obj.dart';
+import 'Quotetemp.dart';
 void main() {
   runApp( MaterialApp(
     home: Home(),
@@ -13,34 +14,9 @@ class Home extends StatefulWidget {
   State<Home> createState() => _HomeState();
 }
 
-Widget quoterTemplate (Quote quote){
 
-  return Card(
-  margin: EdgeInsets.fromLTRB(16, 16, 16, 0),
 
-    child: Container(
-      padding:EdgeInsets.all(12),
-      color:Colors.pink ,
-     child: Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        Text(quote.q
-        ,style:TextStyle(
-              color: Colors.white,
-              fontSize: 16,
 
-            )),
-        SizedBox(height: 10),
-        Text("Author: ${quote.author}"
-            ,style:TextStyle(
-                color: Colors.white,
-                fontSize: 10
-            ))
-      ],
-    ),
-  ));
-
-}
 
 class _HomeState extends State<Home> {
   List<Quote> quotes=[Quote(author: "Umer",q: "Good boy"),Quote(q:"Hey" ,author: "Hello")];
@@ -55,7 +31,7 @@ class _HomeState extends State<Home> {
       ),
       body:
           Column(
-            children: quotes.map((qu)=> quoterTemplate(qu)).toList(),
+            children: quotes.map((qu)=> Quotetem(quote:qu)).toList(),
           )
      ,
       floatingActionButton: FloatingActionButton(
