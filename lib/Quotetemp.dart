@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'obj.dart';
 class Quotetem extends StatelessWidget {
   final quote;
+   final void Function()? delete;
   const Quotetem({
     this.quote,
+     this.delete
   });
 
   @override
@@ -28,7 +30,10 @@ class Quotetem extends StatelessWidget {
                   ,style:TextStyle(
                       color: Colors.grey,
                       fontSize: 10
-                  ))
+                  )),
+              SizedBox(height: 10),
+              ElevatedButton.icon(onPressed: delete, icon:Icon(Icons.delete),label: Text("Delete"),style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.red[900])), )
+              
             ],
           ),
         ));
